@@ -23,7 +23,9 @@ namespace ListaProducto.FE
         {
             Producto pr = new Producto();
             pr.Codigo = "001";
+
             pr.Descripcion = "Papa";
+            pr.Precio = 10.2M;
 
 
             Producto pr2 = new Producto();
