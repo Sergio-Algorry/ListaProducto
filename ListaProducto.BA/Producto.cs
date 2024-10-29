@@ -13,5 +13,22 @@ namespace ListaProducto.BA
         public decimal Cantidad { get; set; }
         public string UnMed { get; set; }
         public decimal Precio { get; set; }
+
+        public Producto()
+        {
+            
+        }
+        public Producto(string codigo,
+                        string descripcion,
+                        string cantidad,
+                        string unmed,
+                        string precio)
+        {
+            Codigo      = codigo;
+            Descripcion = descripcion;
+            UnMed       = unmed;
+            Cantidad    = Convert.ToDecimal(cantidad);
+            Precio      = Convert.ToDecimal(precio);
+        }
     }
 }
