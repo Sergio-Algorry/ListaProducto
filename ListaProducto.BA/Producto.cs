@@ -30,5 +30,19 @@ namespace ListaProducto.BA
             Cantidad    = Convert.ToDecimal(cantidad);
             Precio      = Convert.ToDecimal(precio);
         }
+
+        public override string ToString()
+        {
+            string res = "";
+            //res = Codigo
+            //    + " " + Descripcion
+            //    + " (" + UnMed
+            //    + ") " + Cantidad.ToString()
+            //    + " " + Precio.ToString();
+
+            res = $" {Codigo} - {Descripcion} ({UnMed}) {Cantidad.ToString()} $ {Precio.ToString()} ";
+
+            return res;
+        }
     }
 }

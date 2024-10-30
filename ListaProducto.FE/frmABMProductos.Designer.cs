@@ -40,9 +40,10 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btActualizar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btBorrar = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
+            this.lblLista = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btAgregar
@@ -145,23 +146,24 @@
             this.btActualizar.UseVisualStyleBackColor = true;
             this.btActualizar.Click += new System.EventHandler(this.btActualizar_Click);
             // 
-            // button2
+            // btBorrar
             // 
-            this.button2.Location = new System.Drawing.Point(322, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btBorrar.Location = new System.Drawing.Point(322, 56);
+            this.btBorrar.Name = "btBorrar";
+            this.btBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btBorrar.TabIndex = 12;
+            this.btBorrar.Text = "Borrar";
+            this.btBorrar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btBuscar
             // 
-            this.button3.Location = new System.Drawing.Point(429, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btBuscar.Location = new System.Drawing.Point(429, 56);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btBuscar.TabIndex = 13;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // btLimpiar
             // 
@@ -173,14 +175,23 @@
             this.btLimpiar.UseVisualStyleBackColor = true;
             this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
+            // lblLista
+            // 
+            this.lblLista.AutoSize = true;
+            this.lblLista.Location = new System.Drawing.Point(25, 86);
+            this.lblLista.Name = "lblLista";
+            this.lblLista.Size = new System.Drawing.Size(0, 13);
+            this.lblLista.TabIndex = 15;
+            // 
             // frmABMProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLista);
             this.Controls.Add(this.btLimpiar);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btBuscar);
+            this.Controls.Add(this.btBorrar);
             this.Controls.Add(this.btActualizar);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label5);
@@ -214,9 +225,10 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btActualizar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btBorrar;
+        private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.Button btLimpiar;
+        private System.Windows.Forms.Label lblLista;
     }
 }
 

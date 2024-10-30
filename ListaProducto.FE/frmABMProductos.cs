@@ -40,12 +40,42 @@ namespace ListaProducto.FE
                                        txtPrecio.Text);
 
             ListaProductos.Insert(pr);
+            lblLista.Text = ListaProductos.ToString();
             Limpiar();
+
+
         }
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btActualizar_Click(object sender, EventArgs e)
+        {
+            Producto pr = new Producto(txtCodigo.Text,
+                                       txtDescripcion.Text,
+                                       txtCantidad.Text,
+                                       txtUnMed.Text,
+                                       txtPrecio.Text);
+
+            bool res = ListaProductos.Update(pr);
+            if (res)
+            {
+                lblLista.Text = ListaProductos.ToString();
+            }
+            else
+            {
+                lblLista.Text = $"El código {txtCodigo.Text} no se encontró en la lista y no se pudo actualizar";
+            }
+            Limpiar();
+        }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            Producto pr =ListaProductos.Select(txtCodigo.Text);
+
+            Mostrar(pr);
         }
 
         private void Limpiar()
@@ -58,16 +88,20 @@ namespace ListaProducto.FE
             txtCodigo.Focus();
         }
 
-        private void btActualizar_Click(object sender, EventArgs e)
+        private void Mostrar (Producto producto)
         {
-            Producto pr = new Producto(txtCodigo.Text,
-                                       txtDescripcion.Text,
-                                       txtCantidad.Text,
-                                       txtUnMed.Text,
-                                       txtPrecio.Text);
-
-            ListaProductos.Update(pr);
-            Limpiar();
+            if (producto == null)
+            {
+                lblLista.Text = "El producto no se encontró";                 
+            }
+            else
+            {
+                txtCodigo.Text = producto.Codigo;
+                txtDescripcion.Text = producto.Descripcion;
+                txtUnMed.Text = producto.UnMed;
+                txtCantidad.Text = producto.Cantidad.ToString();
+                txtPrecio.Text = producto.Precio.ToString();
+            }
         }
     }
 }
